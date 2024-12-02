@@ -4,13 +4,29 @@
 npm create astro@latest -- --template minimal
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/AdventOfCSS/2024-12-01__photo-gallery)
+[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/AdventOfCSS/2024-12-01__photo-gallery)
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/AdventOfCSS/2024-12-01__photo-gallery)
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+# Advent of CSS 2024 - Challenge #1
 
-## 🚀 Project Structure
+This is the solution for [Advent of CSS 2024](https://adventofcss.com) - Challenge #1.
+
+![](./images/CSS-CHALLENGE-1.png)
+
+## The Challenge
+
+For today’s challenge, we’ll build a photo gallery card, similar to Facebook:
+
+### Brief
+
+Create a photo gallery card, similar to what Facebook uses in their feed. The “trick” here is not just to display the grid, but make the code “smart” enough to display the photos correctly, regardless of whether there’s 1 photo or 21.
+
+![]()
+
+## The Solution
+
+For the solution, I used [Astro](https://astro.build/) and [TailwindCSS](https://tailwindcss.com/). Of course, these aren't requirements. But, these tools make it easy to get up and running quickly.
 
 Inside of your Astro project, you'll see the following folders and files:
 
@@ -23,11 +39,9 @@ Inside of your Astro project, you'll see the following folders and files:
 └── package.json
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+All of the HTML in inside the `index.astro` file.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
+The static assets, like images, are inside the `public/images/` directory.
 
 ## 🧞 Commands
 
@@ -42,6 +56,4 @@ All commands are run from the root of the project, from a terminal:
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
 
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+I did a [live stream of me coding this out.](https://youtu.be/UfxfvsgVnVM)

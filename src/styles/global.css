@@ -3,7 +3,9 @@
 @tailwind utilities;
 
 @layer base {
-  img { @apply rounded-lg max-h-[300px] w-full object-cover; }
+  img {
+    @apply rounded-lg max-h-[300px] w-full object-cover;
+  }
 }
 
 @layer components {
@@ -11,24 +13,34 @@
     @apply grid gap-4 m-10;
   }
 
+  /* when there's only 1 photo */
   .photo-gallery:has(div:nth-child(1)) {
     @apply grid-cols-1;
-    img { @apply max-h-[616px]; }
+    img {
+      @apply max-h-[616px] h-full;
+    }
   }
 
+  /* when there's 2 photos */
   .photo-gallery:has(div:nth-child(2)) {
     @apply grid-cols-2;
-    img { @apply max-h-[616px]; }
+    img {
+      @apply max-h-[616px];
+    }
   }
 
+  /* when there's 3 photos */
   .photo-gallery:has(div:nth-child(3)) {
     @apply grid-cols-2;
-    img { @apply max-h-[300px]; }
+    img {
+      @apply max-h-[300px];
+    }
     > div:nth-child(3) {
       @apply col-span-2;
     }
   }
 
+  /* when there's 4 photos */
   .photo-gallery:has(div:nth-child(4)) {
     @apply grid-cols-2;
     > div:nth-child(3) {
@@ -36,8 +48,9 @@
     }
   }
 
+  /* when there's 5 (or more) photos */
   .photo-gallery:has(div:nth-child(5)) {
-    @apply  grid-cols-6;
+    @apply grid-cols-6;
     > div:nth-child(1),
     > div:nth-child(2) {
       @apply col-span-3;
@@ -50,34 +63,48 @@
     }
   }
 
-
+  /* when there's 6 or more photos */
   .photo-gallery:has(div:nth-child(6)) {
+    /* this sets up the counter */
+    /* since there's 5 photos already showing, we start at -5 */
     counter-set: photo-count -5;
     counter-reset: photo-count;
+
+    /* this shows an overlay on the 5th photo */
     > div:nth-child(5) {
       @apply bg-black rounded-lg col-start-5 col-span-2 row-start-2;
-      img { @apply opacity-50;}
+      img {
+        @apply opacity-50;
+      }
     }
-    > div:nth-child(n+6){
+
+    /* this hides the photos that are beyond the 5th */
+    > div:nth-child(n + 6) {
       @apply col-start-5 col-span-2 row-start-2;
-      img { @apply hidden; }
+      img {
+        @apply hidden;
+      }
     }
     > div {
       @apply relative z-10;
     }
+    /* this displays the counter */
     > div:before {
       display: block;
+      /* We want to hide the count and only show for the very last photo.
+        we're using visibility instead of display because if you set display to
+        none then it's not included in the count */
       visibility: hidden;
       content: "+" counter(photo-count);
       counter-increment: photo-count;
       @apply text-[100px] font-bold absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 text-white z-20;
     }
+    /* this shows the counter for the last photo */
     > div:last-of-type:before {
       visibility: visible;
     }
   }
-
-
 }
 
-@layer utilities { }
+@layer utilities {
+}
