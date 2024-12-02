@@ -20,6 +20,8 @@ Create a photo gallery card, similar to what Facebook uses in their feed. The â€
 
 ## The Solution
 
+I did a [live stream of me coding this out.](https://youtu.be/UfxfvsgVnVM) (Jump to the 11:33 mark. The first 11 minutes is me trying to work with CodePen and vanilla CSS. ðŸ˜“)
+
 For the solution, I used [Astro](https://astro.build/) and [TailwindCSS](https://tailwindcss.com/). Of course, these aren't requirements. But, these tools make it easy to get up and running quickly.
 
 Inside of your Astro project, you'll see the following folders and files:
@@ -49,5 +51,3 @@ All commands are run from the root of the project, from a terminal:
 | `npm run preview`         | Preview your build locally, before deploying     |
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-I did a [live stream of me coding this out.](https://youtu.be/UfxfvsgVnVM)
